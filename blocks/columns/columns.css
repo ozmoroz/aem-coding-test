@@ -2,6 +2,21 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 40px;
+}
+
+/* Ensure paddings and borders do not break column layout */
+.columns > div,
+.columns > div > div {
+  box-sizing: border-box;
+}
+
+.columns-container {
+  background-color: #91c7ed;
+}
+
+.columns-container > .default-content-wrapper{
+  padding-top: 5px;
 }
 
 .columns img {
@@ -9,7 +24,21 @@
 }
 
 .columns > div > div {
+  border: 1px solid #ccc;
+  border-radius: 5px;
   order: 1;
+  background-color: white;
+}
+
+.columns > div > div > p:first-of-type {
+  margin-top: 0;
+}
+
+.columns > div > div > p:nth-of-type(2),
+.columns > div > div > p:nth-of-type(3) {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .columns > div > .columns-img-col {
