@@ -7,13 +7,15 @@
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hero h1 {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 10px 20px;
 }
 
 .hero picture {
