@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .columns img {
@@ -19,15 +20,46 @@
   display: block;
 }
 
-@media (width >= 900px) {
+/* 3 columns for screens larger than 990px */
+
+@media (width >= 991px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
   }
 
   .columns > div > div {
-    flex: 1;
-    order: unset;
+    flex: 0 0 calc((100% - 4rem) / 3);
+    max-width: calc((100% - 4rem) / 3);
+  }
+}
+
+/* 2 columns for screens between 768px and 990px */
+
+@media (768px <= width <= 990px) {
+  .columns > div {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+  }
+
+  .columns > div > div {
+    flex: 0 0 calc((100% - 4rem) / 2);
+    max-width: calc((100% - 4rem) / 2);
+  }
+}
+
+/* 1 column for screens less than 768px */
+
+@media (width <= 767px) {
+  .columns > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .columns > div > div {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
